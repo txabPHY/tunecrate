@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tunecrate</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+        <div class="track-card">
+            <p id="track-name"></p>
+            <p id="track-artist"></p>
+        </div>
+        <div class="bin-buttons">
+            <button id="peak-time-button" onclick="selectBin('peak time')">peak time</button>
+            <button id="warmup-button" onclick="selectBin('warmup')">warmup</button>
+            <button id="rolling-button" onclick="selectBin('rolling')">rolling</button>
+            <button id="late-night-button" onclick="selectBin('late night')">late night</button>
+            <button id="skip-track-button" onclick="skipTrack()">skip</button>
+            <button id="undo-button" onclick="goBack()">undo</button>
+        </div>
+        <p id="element"></p>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
