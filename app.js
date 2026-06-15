@@ -61,12 +61,14 @@ function goBack() {
         currentIndex = 0;
         return;
     }
+    document.getElementById("finished-message").innerText = "";
     const track = currentQueue[currentIndex];
     track.bin = null;
     showTrack();
 }
 
 function showCrateView() {
+    document.getElementById("crate-view").innerHTML = "";
     let crates = {};
     for (let track of tracks) {
         if (track.bin) {
@@ -76,7 +78,23 @@ function showCrateView() {
             crates[track.bin].push(track);
         }
     }
-    console.log(crates);
+    for (const [bin, tracks] of Object.entries(crates)) {
+        const heading = document.createElement("h2");
+        heading.textContent = bin;
+        document.getElementById("crate-view").appendChild(heading);
+        console.log(`${bin}`);
+        for (const track of tracks) {
+            console.log(`${track.name} - ${track.artist}`);
+            const song = document.createElement("p");
+            song.textContent = `${track.name} - ${track.artist}`;
+            document.getElementById("crate-view").appendChild(song);
+        }
+    }
+}
+
+function endSession() {
+    document.getElementById("finished-message").innerText = "Session ended. Here are your sorted tracks:";
+    showCrateView();
 }
 
 showTrack();

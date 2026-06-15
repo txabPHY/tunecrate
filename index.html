@@ -8,21 +8,25 @@
 </head>
 <body>
     <div class="app">
+        <h1 id="app-title">Tunecrate</h1>
         <div class="track-card">
             <p id="track-name"></p>
             <p id="track-artist"></p>
         </div>
-        <button id="show-crate-view" onclick="showCrateView()">Show Crate View</button>
         <div class="bin-buttons">
-            <button id="peak-time-button" onclick="selectBin('peak time')">peak time</button>
-            <button id="warmup-button" onclick="selectBin('warmup')">warmup</button>
-            <button id="rolling-button" onclick="selectBin('rolling')">rolling</button>
-            <button id="late-night-button" onclick="selectBin('late night')">late night</button>
+            <button onclick="selectBin('peak time')"><span class="dot purple"></span>peak time</button>
+            <button onclick="selectBin('warmup')"><span class="dot teal"></span>warmup</button>
+            <button onclick="selectBin('rolling')"><span class="dot amber"></span>rolling</button>
+            <button onclick="selectBin('late night')"><span class="dot coral"></span>late night</button>
+        </div>
+        <div class='action-buttons'>
+            <button id="show-crate-view" onclick="showCrateView()">Show Crate View</button>
             <button id="skip-track-button" onclick="skipTrack()">skip</button>
             <button id="undo-button" onclick="goBack()">undo</button>
+            <button id="end-button" onclick="endSession()">end</button>
         </div>
         <p id="finished-message"></p>
-        <div class="crate-view"> 
+        <div id="crate-view">
 
         </div>
     </div>
